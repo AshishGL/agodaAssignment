@@ -84,4 +84,9 @@ class TestChangeUserPassword {
 	void test12() {
 		assertEquals(false, testObj.changePassword("Ashish@*12345abcdefghi", "Ashishdf@12345678993234"));
 	}
+	// new password should not be similar to old password >80%
+		@Test
+		void test13() {
+			assertEquals(false, testObj.changePassword("Ashish@*12345abcdefghi", "Ashish@*12345abcdefghius"));
+		}
 }
